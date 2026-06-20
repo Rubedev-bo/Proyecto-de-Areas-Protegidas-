@@ -11,16 +11,18 @@ from marshmallow import Schema
 db = SQLAlchemy()
 migrate = Migrate()
 
-login_mamager = LoginManager()
-login_mamager.login_view = "auth.login"
-login_mamager.login_message = "Por favor debe iniciar sesión para continuar"
-login_mamager.login_message_category = "warning"
+login_manager = LoginManager()
+login_manager.login_view = "auth.login"
+login_manager.login_message = "Por favor debe iniciar sesión para continuar"
+login_manager.login_message_category = "warning"
 
 
 jwt = JWTManager()
-Bcrypt = Bcrypt()
+bcrypt = Bcrypt()
 
 csrf = CSRFProtect()
 
 
 cors = CORS()
+
+Column = db.Column
